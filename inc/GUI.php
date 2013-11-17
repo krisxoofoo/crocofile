@@ -135,8 +135,8 @@ class GUI {
         echo '</tr>';
         foreach($files as $file){
             $name = basename($file);
-+            $file_epxlode = explode('.',$file);
-+            $ext  = htmlspecialchars(array_pop($file_epxlode));
+            $file_epxlode = explode('.',$file);
+            $ext  = htmlspecialchars(array_pop($file_epxlode));
             echo '<tr>';
 
             echo '<td>';
