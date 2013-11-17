@@ -63,4 +63,3 @@ class Authentication extends HTTPDigest {
         file_put_contents($this->userfile,$data);
     }
 }
-

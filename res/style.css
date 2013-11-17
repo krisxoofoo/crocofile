@@ -1,7 +1,7 @@
 body {
     font-size:13px;
     font-family: Arial, sans-serif;
-    width: 700px;
+    max-width: 700px;
     margin: 20px auto;
     background-color: #fff;
 }
@@ -26,15 +26,13 @@ a.file {
 ul.tabs {
     padding: 0;
     margin: 0 0 3em 0;
+    line-height: 2.5em;
 }
 
 ul.tabs li {
     display: inline;
     border: 2px dashed #3da4d3;
     padding: 0.5em 1.5em;
-    -moz-border-radius: 20px;
-    -webkit-border-radius: 20px;
-    -khtml-border-radius: 20px;
     border-radius: 20px;
 }
 ul.tabs li a {

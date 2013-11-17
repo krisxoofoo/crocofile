@@ -15,29 +15,34 @@ class GUI {
 
     public function header(){
     ?>
-        <!DOCTYPE html>
-        <html>
+<!DOCTYPE html>
+    <html>
         <head>
-            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+            <meta charset="UTF-8" />
             <title><?php echo htmlspecialchars($this->conf->get('title'))?></title>
-            <link href="res/fileuploader.css" rel="stylesheet" type="text/css" />
-            <link href="res/style.css" rel="stylesheet" type="text/css" />
-            <link href="fileicons/fileicons.css" rel="stylesheet" type="text/css" />
-            <script src="res/sorttable.js" type="text/javascript"></script>
+            <link href="res/fileuploader.css" rel="stylesheet" />
+            <link href="res/style.css" rel="stylesheet" />
+            <link href="fileicons/fileicons.css" rel="stylesheet" />
+            <script src="res/sorttable.js"></script>
             <link rel="shortcut icon" href="favicon.ico" />
         </head>
         <body>
-        <h1>
-            <img src="<?php echo $this->conf->get('icon')?>" border="0" />
-            <?php echo $this->conf->get('title')?>
-        </h1>
-        <?php if($this->realuser == 'admin') $this->workasdropdown() ?>
-        <ul class="tabs">
+        <header>
+		<h1>
+			<img src="<?php echo $this->conf->get('icon')?>" border="0" />
+			<?php echo $this->conf->get('title')?>
+		</h1>
+	</header>
+	<nav>
+		<?php if($this->realuser == 'admin') $this->workasdropdown() ?>
+          <ul class="tabs">
             <li><a href=".<?php $this->wasp('?')?>">Download</a></li>
             <li><a href="upload<?php $this->wasp('?')?>">Upload</a></li>
             <?php if($this->user == 'admin') echo '<li><a href="userlist">Users</a></li>' ?>
-        </ul>
-        <div class="wrap">
+          </ul>
+	</nav>
+	<main>
+		<section class="wrap">
     <?php
     }
 
@@ -79,13 +84,12 @@ class GUI {
 
     public function footer(){
     ?>
-        </div>
-        <div class="footer">
-            powered by <a href="http://www.splitbrain.org/projects/crocofile">Crocofile</a>
-        </div>
-        </body>
-        </html>
-    <?php
+		</section>
+	</main>
+        <footer class="footer">powered by <a href="http://www.splitbrain.org/projects/crocofile">Crocofile</a></footer>
+    </body>
+</html>
+<?php
     }
 
     public function uploadform(){
@@ -99,7 +103,7 @@ class GUI {
             </noscript>
         </div>
 
-        <script src="res/fileuploader.js" type="text/javascript"></script>
+        <script src="res/fileuploader.js"></script>
         <script>
             function createUploader(){
                 var uploader = new qq.FileUploader({
